@@ -1,0 +1,20 @@
+<div class="jumbotron text-center">
+  <h1>URL Parse Example</h1>
+  <h2>Enter a URL below to view its links</h2>
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="url" class="form-control" size="50" ng-model="inputURL" placeholder="http://example.io" required="true">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger" ng-click="getURL()">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div ng-show="displayLinks" class="text-center">
+  <h3 class=row>Displaying Links From: {{ inputURL }} </h3>
+</div>
+<div ng-repeat="link in linkList track by $index" class="col text-center">
+  <ul>
+    <li><a href="{{ link [1] }}">{{ link[0] }}</a></li>
+  </ul>
+</div>
